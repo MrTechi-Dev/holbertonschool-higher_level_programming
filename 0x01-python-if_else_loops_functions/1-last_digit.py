@@ -5,7 +5,7 @@ last_digit = number % 10
 
 if number < 0:
     last_digit = abs(number) % 10
-    # abd function corrects the last digit number issue on negative numbers
+    # abs function corrects the last digit number issue on negative numbers
     last_digit = -last_digit
 print("Last digit of", number, "is", last_digit, "and is", end=" ")
 if last_digit > 5:
