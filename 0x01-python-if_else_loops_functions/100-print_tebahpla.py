@@ -1,6 +1,3 @@
 #!/usr/bin/python3
-for g in range(0, 26):
-    if (g % 2 == 0):
-        print("{:s}".format(chr(122 - g)), end="")
-    else:
-        print("{:s}".format(chr(122 - g - 32)), end="")
+for i in range(122, 96, -1):
+    print("{:c}".format((i - 32) if i % 2 != 0 else i), end='')
