@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 def print_last_digit(number):
-    n = number
-    if n < 0:
-        numberpos = n * -1
+    if number < 0:
+        number = number * -1
+        print("{:d}".format(number % 10), end='')
     else:
-        numberpos = n
-    r = numberpos % 10
-    print(r, end='')
-    return r
+        print("{:d}".format(number % 10), end='')
+    return(number % 10)
