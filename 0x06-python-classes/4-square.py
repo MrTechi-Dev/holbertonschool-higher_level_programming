@@ -39,4 +39,3 @@ class Square:
         """The are public of the square class"""
 
         return self.__size * self.__size
-
