@@ -1,82 +1,85 @@
-The ``0-add_integer`` module
-============================
+===============================
+0-add_integer.py
+===============================
 
-Using ``add_integer``
----------------------
-Checking docstring for module:
-        >>> __import__('0-add_integer').__doc__ != None
-        True
+Function that adds 2 integers.
 
-Import ``add_integer`` from the ``0-add_integer`` module:
-        >>> add_integer = __import__('0-add_integer').add_integer
+=======
+Returns the sum of the arguments.
 
-Check docstring for function:
-        >>> len(add_integer.__doc__) > 0
-        True
+::
 
-Adding two numbers
-        >>> add_integer(4, 2)
-        6
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
 
-Adding with negative number:
-        >>> add_integer(-4, 2)
-        -2
+Negative integers.
 
-Adding float with int:
-        >>> add_integer(4.1, 2)
-        6
+::
 
-Adding neggative float with float:
-        >>> add_integer(-4.1, 2.3)
-        -2
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(-2, 3)
+    1
 
-Adding float with float:
-        >>> add_integer(2.3, 2.4)
-        4
+Works with floating values.
 
-Checking the return of the function:
-        >>> type(add_integer(-4, 2)) == int
-        True
+::
 
-Adding a string with int:
-        >>> add_integer("H", 2)
-        Traceback (most recent call last):
-                ...
-        TypeError: a must be an integer
+    >>> add_integer(4.0, 3)
+    7
+    >>> add_integer(2.2, 3.8)
+    5
 
-Adding a int with string:
-        >>> add_integer(2, "H")
-        Traceback (most recent call last):
-                ...
-        TypeError: b must be an integer
+Works with one argument. Second arg is default as 98
 
-ValueError float NaN:
-         >>> add_integer(float('NaN'))
-        Traceback (most recent call last):
-        ValueError: cannot convert float NaN to integer
+::
 
-Adding big numbers:
-        >>> add_integer(1213213213213213212313213212313223, 45465456465465465465465465465)
-        1213258678669678677778678677778688
+    >>> add_integer(102)
+    200
 
-Adding with inf:
-        >>> add_integer(float('inf'), 2)
-        Traceback (most recent call last):
-                ...
-        OverflowError: cannot convert float infinity to integer
+None arguments declared
 
-Call empty function:
-        >>> add_integer()
-        Traceback (most recent call last):
-                ...
-        TypeError: add_integer() missing 1 required positional argument: 'a'
+::
 
-Call function with more than 2 arguments:
-        >>> add_integer(1, 2, 3)
-        Traceback (most recent call last):
-                ...
-        TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
 
-Call function with only 1 argument:
-        >>> add_integer(1)
-        99
+TypeError message of None arguments declared
+
+::
+    >>> add_integer(1, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+TypeError message of Booleans arguments declared
+
+::
+
+    >>> add_integer(True)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Booleans arguments declared
+
+::
+
+    >>> add_integer(1, True)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+OverflowError float
+
+::
+
+    >>> add_integer(4, float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+ValueError float NaN
+
+::
+
+    >>> add_integer(float('NaN'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
