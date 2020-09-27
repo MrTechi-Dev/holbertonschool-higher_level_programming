@@ -1,99 +1,75 @@
-=================================
-The ``5-text_indentation`` module
-=================================
+===============================
+5-text_indentation.py
+===============================
 
-Using ``text_indentation``
---------------------------
+Function that prints a text with 2 new lines after each of these characters: ., ? and :
 
-Checking docstring for module:
-    >>> __import__('5-text_indentation').__doc__ != None
-    True
+=======
 
-First import "text_indentation" from the "5-text_indentation" module:
+Prints a text with 2 new lines after each of these characters: ., ? and :
+
+::
 
     >>> text_indentation = __import__('5-text_indentation').text_indentation
-
-Check docstring for function:
-    >>> len(text_indentation.__doc__) > 0
-    True
-
-Now you can use it:
-
-    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres.""")
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    <BLANKLINE>
-    Quonam modo?
-    <BLANKLINE>
-    Utrum igitur tibi litteram videor an totas paginas commovere?
-    <BLANKLINE>
-    Non autem hoc:
-    <BLANKLINE>
-    igitur ne illud quidem.
-    <BLANKLINE>
-    Fortasse id optimum, sed ubi illud:
-    <BLANKLINE>
-    Plus semper voluptatis?
-    <BLANKLINE>
-    Teneo, inquit, finem illi videri nihil dolere.
-    <BLANKLINE>
-    Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
-    <BLANKLINE>
-    Si id dicis, vicimus.
-    <BLANKLINE>
-    Inde sermone vario sex illa a Dipylo stadia confecimus.
-    <BLANKLINE>
-    Sin aliud quid voles, postea.
-    <BLANKLINE>
-    Quae animi affectio suum cuique tribuens atque hanc, quam dico.
-    <BLANKLINE>
-    Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres.
+    >>> text_indentation("Hello.")
+    Hello.
     <BLANKLINE>
 
-    >>> text_indentation("sopa. du: MACCACO.")
-    sopa.
+Works with defined variable
+
+::
+    >>> t = "Beautiful is better than ugly. : : ? ? Explicit is better than implicit."
+    >>> text_indentation(t)
+    Beautiful is better than ugly.
     <BLANKLINE>
-    du:
+    :
     <BLANKLINE>
-    MACCACO.
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    Explicit is better than implicit.
     <BLANKLINE>
 
-    >>> text_indentation("Hacer ejemplos de este . Es maluquitox :c")
-    Hacer ejemplos de este .
-    <BLANKLINE>
-    Es maluquitox :
-    <BLANKLINE>
-    c
+Works with str
 
-    >>> text_indentation(10)
+::
+    >>> text_indentation(str(1231) + ".")
+    1231.
+    <BLANKLINE>
+
+Works with t = " : . ? "
+    >>> t=" : . ? "
+    >>> text_indentation(t)
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+TypeError string
+
+::
+
+    >>> text_indentation(1)
     Traceback (most recent call last):
     TypeError: text must be a string
 
-     >>> text_indentation(""" We are learning now Python Programming Language""", 10)
+TypeError None
+
+::
+
+    >>> text_indentation(None)
     Traceback (most recent call last):
-    TypeError: text_indentation() takes 1 positional argument but 2 were given
+    TypeError: text must be a string
 
-    >>> text_indentation("This is a string. text")
-    This is a string.
-    <BLANKLINE>
-    text
+TypeError Boolean
 
-    >>> text_indentation()
+::
+
+    >>> text_indentation(True)
     Traceback (most recent call last):
-    TypeError: text_indentation() missing 1 required positional argument: 'text'
-
-    >>> text_indentation("""...""")
-    .
-    <BLANKLINE>
-    .
-    <BLANKLINE>
-    .
-    <BLANKLINE>
-
-    >>> text_indentation("""Let's try with: a lot of spaces         is it working?		\even more spaces please. Check""")
-    Let's try with:
-    <BLANKLINE>
-    a lot of spaces         is it working?
-    <BLANKLINE>
-    even more spaces please.
-    <BLANKLINE>
-    Check
+    TypeError: text must be a string
