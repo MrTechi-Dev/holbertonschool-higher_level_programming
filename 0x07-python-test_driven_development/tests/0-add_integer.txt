@@ -50,7 +50,7 @@ Adding a int with string:
                 ...
         TypeError: b must be an integer
 
-ValueError float NaN
+ValueError float NaN:
          >>> add_integer(float('NaN'))
         Traceback (most recent call last):
         ValueError: cannot convert float NaN to integer
