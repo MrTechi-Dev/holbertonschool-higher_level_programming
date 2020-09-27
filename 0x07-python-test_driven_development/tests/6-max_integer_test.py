@@ -1,64 +1,40 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
 """Unittest for max_integer([..])
 """
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
-
 class TestMaxInteger(unittest.TestCase):
+    """
+    This is the class unittest for the max integer function
+    """
+    def test_sorted(self):
+        sorted_list = [1, 2, 3, 4]
+        self.assertEqual(max_integer(sorted_list), 4)
 
-    def test_max(self):
-        """Check output for normal input"""
-        self.assertEqual(max_integer([1, 50, 2]), 50)
-        self.assertEqual(max_integer([-5, -10, -9]), -5)
-        self.assertEqual(max_integer([1]), 1)
-        self.assertEqual(max_integer([1, 1, 1, 1]), 1)
-        self.assertEqual(max_integer([2, 4] * 3), 4)
+    def test_list_float(self):
+        f_l = [1.11, 2.22, 3.33, 4.44]
+        self.assertEqual(max_integer(f_l), 4.44)
 
-    def test_empty(self):
-        """Check for an empty list"""
-        self.assertEqual(max_integer([]), None)
+    def test_num_string(self):
+        self.assertEqual(max_integer("1234567890"), "9")
 
-    def test_tuple(self):
-        """Check for different types of input"""
-        with self.assertRaises(TypeError):
-            _max = max_integer((2, 3))
+    def test_strng(self):
+        self.assertEqual(max_integer("abcdefg"), "g")
 
-    def test_None(self):
-        """Check for different types of input"""
-        with self.assertRaises(TypeError):
-            _max = max_integer(None)
+    def test_empty_list(self):
+        empty = []
+        self.assertEqual(max_integer(empty), None)
 
-    def test_big_number(self):
-        """Check for big numbers"""
-        _list = [2135456413213546541321324163463123132746,
-                 13524654351321324135461321354]
-        self.assertEqual(max_integer(_list),
-                         2135456413213546541321324163463123132746)
+    def test_one_list(self):
+        only_one = [1]
+        self.assertEqual(max_integer(only_one), 1)
 
-    def test_float(self):
-        """Check for floats"""
-        _list = [2.3, 5.6, 7.8]
-        with self.assertRaises(TypeError):
-            _max = max_integer(_list)
+    def test_max_int(self):
+        max_first = [4, 1, 2, 3]
+        self.assertEqual(max_integer(max_first), 4)
 
-    def test_inf(self):
-        _list = [float('inf'), float('inf')]
-        with self.assertRaises(TypeError):
-            _max = max_integer(_list)
-
-    def test_docstringmod(self):
-        """Check docstring for module"""
-        m = __import__('6-max_integer').__doc__
-        self.assertTrue(m is not None and len(m) > 0)
-
-    def test_docstringfunc(self):
-        f = __import__('6-max_integer').max_integer.__doc__
-        self.assertTrue(f is not None and len(f) > 5)
-
-    def test_morethan(self):
-        with self.assertRaises(TypeError):
-            _max = max_integer(1, 1)
 
 if __name__ == '__main__':
     unittest.main()
