@@ -50,6 +50,11 @@ Adding a int with string:
                 ...
         TypeError: b must be an integer
 
+ValueError float NaN
+         >>> add_integer(float('NaN'))
+        Traceback (most recent call last):
+        ValueError: cannot convert float NaN to integer
+
 Adding big numbers:
         >>> add_integer(1213213213213213212313213212313223, 45465456465465465465465465465)
         1213258678669678677778678677778688
