@@ -4,10 +4,10 @@ The ``4-print_square.py`` module
 Using ``print_square``
 ---------------------
 Checking docstring for module:
-        >>> __import__('4-print_square).__doc__ != None
+        >>> __import__('4-print_square.py).__doc__ != None
         True
 
-Import ``print_square`` from the ``4-print_square`` module:
+Import ``print_square`` from the ``4-print_square.py`` module:
         >>> print_square = __import__('4-print_square').print_square
 
 Check docstring for function:
