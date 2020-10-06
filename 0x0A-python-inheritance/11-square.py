@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" lookup method """
+
+
 Rectangle = __import__('9-rectangle').Rectangle
 
 
