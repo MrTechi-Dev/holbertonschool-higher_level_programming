@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ lookup method """
 
+
 class BaseGeometry():
     """class"""
     def area(self):
