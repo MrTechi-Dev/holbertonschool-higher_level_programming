@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" lookup method """
 
 
 def add_attribute(obj, key, value):
