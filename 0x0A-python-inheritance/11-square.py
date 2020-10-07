@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ lookup method """
 
+
 class BaseGeometry():
     """class"""
     def area(self):
@@ -13,6 +14,7 @@ class BaseGeometry():
             raise TypeError(name + " must be an integer")
         if value <= 0:
             raise ValueError(name + " must be greater than 0")
+
 
 class Rectangle(BaseGeometry):
     """class Rectangle"""
