@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 import os
+"""
+Basic file reading
+"""
 
 
 def read_lines(filename="", nb_lines=0):

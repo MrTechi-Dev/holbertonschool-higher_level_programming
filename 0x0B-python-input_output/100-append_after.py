@@ -1,8 +1,11 @@
 #!/usr/bin/python3
+"""
+Basic file reading and insert text
+"""
 
 
 def append_after(filename="", search_string="", new_string=""):
-    '''Insert text after each line containing a given string in a file'''
+    """Insert text after each line containing a given string in a file"""
     with open(filename, 'r', encoding='utf-8') as f:
         pepe = f.readlines()
     with open(filename, "w", encoding="utf-8") as f:

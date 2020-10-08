@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 import os
+"""
+Basic file number lines
+"""
 
 
 def number_of_lines(filename=""):

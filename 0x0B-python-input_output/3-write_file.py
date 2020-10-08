@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 import os
+"""
+Basic file reading ans write
+"""
 
 
 def write_file(filename="", text=""):

@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 import os
+"""
+Basic file reading and append
+"""
 
 
 def append_write(filename="", text=""):
