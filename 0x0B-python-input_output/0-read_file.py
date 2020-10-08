@@ -5,6 +5,9 @@ Basic file reading
 
 
 def read_file(filename=""):
-    """read the file"""
-    with open("my_file_0.txt", mode="r", encoding="utf-8") as myFile:
-        print(myFile.read())
+    """
+    Function to read a file and print it out
+    """
+    f = open(filename, 'r')
+    for line in f:
+        print('{}'.format(line), end='')
