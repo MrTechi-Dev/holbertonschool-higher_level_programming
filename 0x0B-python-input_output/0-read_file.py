@@ -1,10 +1,9 @@
+nes (6 sloc) 177 Bytes
 #!/usr/bin/python3
-"""
-Basic file reading
-"""
+"""create"""
 
 
 def read_file(filename=""):
-    """read the file"""
-    with open("my_file_0.txt", encoding="utf-8") as myFile:
-        print(myFile.read(), end="")
+    """reading a file"""
+    with open(filename, encoding="utf-8") as myfile:
+        print(myfile.read(), end="")
