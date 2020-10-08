@@ -1,4 +1,3 @@
-nes (6 sloc) 177 Bytes
 #!/usr/bin/python3
 """create"""
 
