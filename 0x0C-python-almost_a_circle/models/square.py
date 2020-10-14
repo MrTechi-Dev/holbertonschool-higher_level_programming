@@ -22,6 +22,11 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def __str__(self):
+        """ string representation """
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
+                                                 self.y, self.width)
+
     def update(self, *x, **z):
         """Updating variable arguments"""
         j = ['id', 'size', 'x', 'y']
