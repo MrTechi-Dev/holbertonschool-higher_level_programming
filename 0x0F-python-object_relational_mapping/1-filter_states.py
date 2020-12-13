@@ -4,21 +4,20 @@ script that list all states.id  with name starting with N from
 database hbtn_0e_0_usa.
 """
 
+import MySQLdb
+from sys import argv
+
 if __name__ == "__main__":
 
-    import sys
-    import MySQLdb
+    userr = argv[1]
+    passw = argv[2]
+    namd = argv[3]
+    lc = "localhost"
 
-    user_name = sys.argv[1]
-    passw = sys.argv[2]
-    data_base = sys.argv[3]
-
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user=user_name, passwd=passw, db=data_base)
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC ")
-    rows = cur.fetchall()
-    for row in rows:
-        print(row)
-    cur.close()
+    db = MySQLdb.connect(host=lc, port=3306, user=userr, passwd=passw, db=namd)
+    cr = db.cursor()
+    cr.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id;")
+    for x in cr.fetchall():
+        print(x)
+    cr.close()
     db.close()
