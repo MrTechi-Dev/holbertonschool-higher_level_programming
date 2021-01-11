@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Script that takes the url and an email, send a POST
-request to the passed URL and displays the boy of the respomse"""
+request to the passed URL and displays the body of the respomse"""
 
 if __name__ == '__main__':
     import urllib.request
