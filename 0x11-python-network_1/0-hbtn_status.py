@@ -3,9 +3,12 @@
 
 from urllib import request
 
-URL = "https://intranet.hbtn.io/status"
-with request.urlopen(URL) as response:
-    data = response.read()
-    data_decode = data.decode('UTF-8')
-    print('Body response: \n\t- type {}\n\t- content: {}\n\t- utf8 content: {}'
-          .format(type(data), data, data_decode))
+if __name__ == "__main__":
+    URL = "https://intranet.hbtn.io/status"
+    with request.urlopen(URL) as response:
+        html = response.read()
+
+    print("Body response:")
+    print("\t- type:", type(html))
+    print("\t- content:", html)
+    print("\t- utf8 content:", html.decode('utf-8'))
